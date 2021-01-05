@@ -41,9 +41,9 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-- stage: deploy
+- stage: Deploy
   jobs:
-  - job: deploy
+  - job: Deploy
     pool:
       vmImage: 'ubuntu-latest'
     steps: 
@@ -65,7 +65,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'SMT-SUB001 (aa748e82-e0df-42e3-ac20-f30b6a5077e0)'
+        azureSubscription: 'Free Trial'
         appType: 'webAppLinux'
         WebAppName: 'testappweb3784e'
         packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
