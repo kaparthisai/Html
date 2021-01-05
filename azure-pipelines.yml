@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- master
 stages:
 - stage: Build
   jobs:
@@ -65,9 +65,9 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Free Trial'
+        azureSubscription: 'Free Trial (f827c0c8-ce4a-4eeb-8ace-5119980b7224)'
         appType: 'webAppLinux'
-        WebAppName: 'testappweb3784e'
+        WebAppName: 'Htmlwebapp01'
         packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
         RuntimeStack: 'NODE|10.14'
         StartupCommand: 'npm start'
